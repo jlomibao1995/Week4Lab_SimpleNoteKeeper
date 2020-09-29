@@ -20,7 +20,18 @@ public class NoteServlet extends HttpServlet {
 
         BufferedReader br = new BufferedReader(new FileReader(new File(path)));
         String title = br.readLine();
-        String contents = br.readLine();
+        String contents = ""; 
+        
+        String line = br.readLine();
+        while (line != null)
+        {
+            contents += line;
+            line = br.readLine();
+        }
+        
+        System.out.println(contents);
+        
+        contents = contents.replaceAll("(\\r\\n|\\n)", "<br>");
         
         Note newNote = new Note(title, contents);
         request.setAttribute("newNote", newNote);
