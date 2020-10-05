@@ -10,11 +10,12 @@ package model;
  * @author Jean
  */
 public class Note {
+
     private String title;
     private String contents;
 
     public Note() {
-        
+
         this.title = "";
         this.contents = "";
     }
@@ -39,9 +40,5 @@ public class Note {
     public void setContents(String contents) {
         this.contents = contents;
     }
-    
-    
-    
-    
-    
+
 }
